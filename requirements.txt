@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pyswisseph
+geopy
+timezonefinder
+pytz
