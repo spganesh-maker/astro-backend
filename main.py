@@ -69,11 +69,11 @@ def calculate_aspects(planet_data):
                 break
     return calculated_aspects
 
-geolocator = Nominatim(user_agent="astro_app_1.0")
+geolocator = Nominatim(user_agent="starcast_app_render_deployment_123")
 tf = TimezoneFinder()
 
 def normalize_birth_data(city_string, local_year, local_month, local_day, local_hour, local_minute):
-    location = geolocator.geocode(city_string)
+    location = geolocator.geocode(city_string, timeout=10)
     if not location:
         raise ValueError(f"Could not find coordinates for: {city_string}")
         
