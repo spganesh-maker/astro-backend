@@ -2,7 +2,7 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 import swisseph as swe
 import itertools
-from geopy.geocoders import Nominatim
+from geopy.geocoders import ArcGIS
 from timezonefinder import TimezoneFinder
 from datetime import datetime, timedelta
 import pytz
@@ -69,7 +69,7 @@ def calculate_aspects(planet_data):
                 break
     return calculated_aspects
 
-geolocator = Nominatim(user_agent="starcast_app_render_deployment_123")
+geolocator = ArcGIS()
 tf = TimezoneFinder()
 
 def normalize_birth_data(city_string, local_year, local_month, local_day, local_hour, local_minute):
